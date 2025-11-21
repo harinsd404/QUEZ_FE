@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div<{ type: string }>`
   display: flex;
-  padding: 16px 18px;
+  padding: 1rem 1.125rem;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   cursor: pointer;
   ${(props) => props.type == 'blue' && `background-color: #EBF1FF;`};
   &:hover {
@@ -14,7 +14,7 @@ export const Container = styled.div<{ type: string }>`
 `;
 export const Content = styled.p<{ type: string }>`
   font-family: Pretendard;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
