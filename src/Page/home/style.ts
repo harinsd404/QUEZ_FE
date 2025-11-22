@@ -9,9 +9,12 @@ export const Container = styled.div`
   gap: 20px;
 `;
 export const Main = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 22px;
+  justify-content: center;
+  align-items: center;
 `;
 export const QuizArea = styled.div`
   display: flex;

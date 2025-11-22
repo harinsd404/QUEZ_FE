@@ -1,6 +1,7 @@
 import * as _ from './style';
 import Header from '@/components/header';
 import QuizBlock from '@/components/quizBlock';
+import ScoreChart from '@/components/scoreChart';
 
 const Home = () => {
   return (
@@ -30,6 +31,7 @@ const Home = () => {
             active={false}
           />
         </_.QuizArea>
+        <ScoreChart />
       </_.Main>
     </_.Container>
   );
