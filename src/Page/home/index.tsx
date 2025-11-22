@@ -3,6 +3,7 @@ import Header from '@/components/header';
 import QuizBlock from '@/components/quizBlock';
 import ScoreChart from '@/components/scoreChart';
 import DailyQuiz from '@/components/dailyQuiz';
+import Lanking from '@/components/lanking';
 
 const Home = () => {
   return (
@@ -36,6 +37,7 @@ const Home = () => {
           <ScoreChart />
           <DailyQuiz />
         </_.QuizAreaGrid>
+        <Lanking />
       </_.Main>
     </_.Container>
   );
