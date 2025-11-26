@@ -113,12 +113,14 @@ export const OXButtonArea = styled.div`
   align-items: center;
   gap: 18px;
   align-self: stretch;
+  width: 100%;
 `;
 export const OXBtn = styled.button<{ color: string }>`
   display: flex;
   padding: 16px;
   justify-content: center;
   align-items: center;
+  width: 100%;
   border-radius: 6px;
   ${(props) =>
     props.color == 'O'
@@ -131,7 +133,12 @@ export const OXBtn = styled.button<{ color: string }>`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: -0.24px;
+  border: ${(props) => (props.color == 'O' ? `none` : `solid 2px #CBD2E0`)};
+
+  :hover {
+    filter: brightness(0.9);
+    border: ${(props) => (props.color == 'O' ? `none` : `solid 2px #CBD2E0`)};
+  }
 `;
 export const IDontKnow = styled.button`
   background: none;
