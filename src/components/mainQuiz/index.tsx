@@ -37,7 +37,12 @@ const MainQuiz: React.FC<mainQuizProps> = ({ type }) => {
             </_.ChoiceButton>
           </_.ChoiceInputGrid>
         )}
-        {type == 'OX'}
+        {type == 'OX' && (
+          <_.OXButtonArea>
+            <_.OXBtn color="O">O</_.OXBtn>
+            <_.OXBtn color="X">X</_.OXBtn>
+          </_.OXButtonArea>
+        )}
 
         <_.IDontKnow>모르겠어요</_.IDontKnow>
       </_.answerInputDiv>

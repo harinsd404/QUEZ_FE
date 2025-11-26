@@ -75,6 +75,7 @@ export const answerInput = styled.input`
     border: #2962f6;
   }
 `;
+
 export const ChoiceInputGrid = styled.div`
   display: grid;
   height: 140px;
@@ -105,6 +106,32 @@ export const ChoiceButtonText = styled.h3<{ color: string }>`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+`;
+
+export const OXButtonArea = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  align-self: stretch;
+`;
+export const OXBtn = styled.button<{ color: string }>`
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  ${(props) =>
+    props.color == 'O'
+      ? `background: #2962f6; color: #fff;`
+      : `background: #fff; color: #2962f6;`}
+
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.24px;
 `;
 export const IDontKnow = styled.button`
   background: none;
