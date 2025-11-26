@@ -9,9 +9,16 @@ interface quizBlockInterface {
   name: string;
   body: string;
   active: Boolean;
+  onClick?: () => void;
 }
 
-const QuizBlock = ({ color, name, body, active }: quizBlockInterface) => {
+const QuizBlock = ({
+  color,
+  name,
+  body,
+  active,
+  onClick,
+}: quizBlockInterface) => {
   return (
     <_.Container>
       <_.Content>
@@ -21,7 +28,7 @@ const QuizBlock = ({ color, name, body, active }: quizBlockInterface) => {
         </_.header>
         <_.body>{body}</_.body>
       </_.Content>
-      <Button name="바로가기" type={active ? 'blue' : ''} />
+      <Button name="바로가기" type={active ? 'blue' : ''} onClick={onClick} />
     </_.Container>
   );
 };
