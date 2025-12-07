@@ -30,20 +30,11 @@ export const loginArea = styled.div`
   gap: 32px;
 `;
 export const linkText = styled.h3`
-  color: #1a202c;
-
-  font-family: Pretendard;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-`;
-export const blueText = styled.h3`
   color: #2962f6;
   font-family: Pretendard;
   font-size: 18px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   line-height: normal;
   :hover {
     filter: brightness(70%);

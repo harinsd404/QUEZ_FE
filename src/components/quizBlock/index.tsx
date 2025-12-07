@@ -1,4 +1,3 @@
-import React from 'react';
 import * as _ from './style';
 import Button from '../button';
 import IconBlue from '@/assets/QuizIconBlue.svg';

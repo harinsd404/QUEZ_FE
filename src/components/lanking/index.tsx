@@ -1,4 +1,3 @@
-import React from 'react';
 import * as _ from './style';
 
 const data = [

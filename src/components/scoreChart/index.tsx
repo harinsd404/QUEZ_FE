@@ -1,8 +1,6 @@
-import React from 'react';
 import * as _ from './style';
 import upScore from '@/assets/upScore.svg';
-import downScre from '@/assets/downScore.svg';
-import { XAxis, Tooltip, Area, AreaChart, ResponsiveContainer } from 'recharts';
+import { Tooltip, Area, AreaChart, ResponsiveContainer } from 'recharts';
 
 const data = [
   { score: 80 },

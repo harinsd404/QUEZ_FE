@@ -10,11 +10,8 @@ const Header = () => {
       </Link>
 
       <_.loginArea>
-        <Link to="/Log-in">
-          <_.linkText>LogIn</_.linkText>
-        </Link>
-        <Link to="/Sign-up">
-          <_.blueText>SignUp</_.blueText>
+        <Link to="/">
+          <_.linkText>로그인</_.linkText>
         </Link>
       </_.loginArea>
     </_.Container>
