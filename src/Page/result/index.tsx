@@ -1,5 +1,4 @@
 import * as _ from './styled';
-import Button from '@/components/button';
 
 const Result = () => {
   return (
@@ -10,3 +9,5 @@ const Result = () => {
     </_.Container>
   );
 };
+
+export default Result;
