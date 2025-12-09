@@ -36,7 +36,47 @@ export const linkText = styled.h3`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
+  margin: 0;
   :hover {
     filter: brightness(70%);
+  }
+`;
+
+export const UserInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+`;
+
+export const UserName = styled.span`
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2962f6;
+`;
+
+export const UserDetail = styled.span`
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4a5468;
+`;
+
+export const LogoutButton = styled.button`
+  padding: 8px 16px;
+  background-color: #e2e7f0;
+  color: #4a5468;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #d0d5dd;
   }
 `;
