@@ -1,17 +1,32 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f1f7;
   display: flex;
-  width: 528px;
-  padding: 60px;
+  flex-direction: row;
+  gap: 20px;
+`;
+export const Main = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  align-items: center;
+`;
+export const ModalMain = styled.div`
+  display: flex;
+  width: 420px;
+  padding: 40px;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
-  border-radius: 20px;
+  gap: 24px;
+  border-radius: 16px;
   background: #fff;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #e2e7f0;
 `;
-export const HeaderText = styled.h3<{ color: string; size: number }>`
+export const Text = styled.h3<{ color: string; size: number }>`
   color: ${(props) =>
     props.color == 'blue'
       ? `#2962F6`
