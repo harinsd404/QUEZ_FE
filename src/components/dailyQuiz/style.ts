@@ -9,11 +9,12 @@ export const Container = styled.div`
   align-self: stretch;
   border-radius: 12px;
   background: #fff;
+  border: 1px solid #e2e7f0;
 `;
 export const Title = styled.h3`
   color: #1a202c;
   font-family: Pretendard;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -29,7 +30,7 @@ export const QuestionArea = styled.div`
   margin: 0;
 
   font-family: Pretendard;
-  font-size: 18px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 600;
 `;
@@ -52,9 +53,11 @@ export const Quiz = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: center;
   padding: 14px;
-  gap: 4px;
+  gap: 10px;
   align-self: stretch;
+  min-height: 152px;
   border-radius: 10px;
   background-color: #f0f1f7;
 `;
@@ -78,10 +81,11 @@ export const QuizButton = styled.button`
 
   color: #000;
   font-family: Pretendard;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  border-radius: 8px;
 
   :hover {
     border: none;
@@ -104,8 +108,25 @@ export const Refresh = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  :hover {
+    filter: brightness(0.8);
+    cursor: pointer;
+  }
 `;
 export const Icon = styled.img`
   width: 16px;
   height: 16px;
+`;
+
+export const CompletedMessage = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1a202c;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 `;

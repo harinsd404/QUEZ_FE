@@ -10,7 +10,7 @@ export const Container = styled.div`
   gap: 24px;
   border-radius: 14px;
   background: #fff;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #e2e7f0;
 `;
 export const QuizTitleDiv = styled.div`
   display: flex;
@@ -38,7 +38,7 @@ export const ContentArea = styled.div`
   align-self: stretch;
 
   border-radius: 10px;
-  border: 1px solid #717d96;
+  border: 1px solid #d1d9e8;
   background: #f0f1f7;
 `;
 export const ContentText = styled.h1`
@@ -63,7 +63,7 @@ export const answerInput = styled.input`
   align-items: center;
   gap: 10px;
   border-radius: 6px;
-  border: 1px solid #a0abc0;
+  border: 1px solid #d1d9e8;
 
   font-family: Pretendard;
   font-size: 14px;
@@ -72,7 +72,7 @@ export const answerInput = styled.input`
   line-height: normal;
 
   :focus {
-    border: #2962f6;
+    border: 1px solid #2962f6;
   }
 `;
 

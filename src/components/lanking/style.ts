@@ -9,6 +9,7 @@ export const Container = styled.div`
   gap: 4px;
   border-radius: 12px;
   background: #fff;
+  border: 1px solid #e2e7f0;
 `;
 export const UserLangking = styled.div<{ user: boolean }>`
   display: flex;

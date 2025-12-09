@@ -1,6 +1,10 @@
 import * as _ from './style';
-import upScore from '@/assets/upScore.svg';
+import upScore from '@/assets/downScore.svg';
 import { Tooltip, Area, AreaChart, ResponsiveContainer } from 'recharts';
+import { useAuth } from '@/hooks/useAuth';
+import { useState } from 'react';
+import Button from '@/components/button';
+import LoginModal from '@/components/loginModal';
 
 const data = [
   { score: 80 },
@@ -13,37 +17,63 @@ const data = [
 ];
 
 const ScoreChart = () => {
-  return (
-    <_.Container>
-      <_.Header>
-        <_.title>일주일 간 점수 변화</_.title>
-        <_.score>
-          <_.icon src={upScore} />
-          <_.title>9999</_.title>
-        </_.score>
-      </_.Header>
-      <_.line></_.line>
-      <_.Chart>
-        <ResponsiveContainer width="100%" height={184}>
-          <AreaChart data={data}>
-            <defs>
-              <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#4F6EFF" stopOpacity={0.4} />
-                <stop offset="100%" stopColor="#4F6EFF" stopOpacity={0} />
-              </linearGradient>
-            </defs>
+  const { isAuthenticated } = useAuth();
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
-            <Tooltip />
-            <Area
-              type="linear"
-              dataKey="score"
-              stroke="#4F6EFF"
-              fill="url(#colorScore)"
+  const handleLoginClick = () => {
+    setIsLoginModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsLoginModalOpen(false);
+  };
+
+  return (
+    <_.Wrapper>
+      <_.Container>
+        <_.Content isBlurred={!isAuthenticated}>
+          <_.Header>
+            <_.title>일주일 간 점수 변화</_.title>
+            <_.score>
+              <_.icon src={upScore} />
+              <_.title>9999</_.title>
+            </_.score>
+          </_.Header>
+          <_.line></_.line>
+          <_.Chart>
+            <ResponsiveContainer width="100%" height={184}>
+              <AreaChart data={data}>
+                <defs>
+                  <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#4F6EFF" stopOpacity={0.4} />
+                    <stop offset="100%" stopColor="#4F6EFF" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+
+                <Tooltip />
+                <Area
+                  type="linear"
+                  dataKey="score"
+                  stroke="#4F6EFF"
+                  fill="url(#colorScore)"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </_.Chart>
+        </_.Content>
+        {!isAuthenticated && (
+          <_.LoginPrompt>
+            <_.Message>로그인 후 이용 가능합니다!</_.Message>
+            <Button
+              name="로그인 하러 가기"
+              type="blue"
+              onClick={handleLoginClick}
             />
-          </AreaChart>
-        </ResponsiveContainer>
-      </_.Chart>
-    </_.Container>
+          </_.LoginPrompt>
+        )}
+      </_.Container>
+      <LoginModal isOpen={isLoginModalOpen} onClose={handleCloseModal} />
+    </_.Wrapper>
   );
 };
 
