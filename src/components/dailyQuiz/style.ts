@@ -9,6 +9,7 @@ export const Container = styled.div`
   align-self: stretch;
   border-radius: 12px;
   background: #fff;
+  border: 1px solid #e2e7f0;
 `;
 export const Title = styled.h3`
   color: #1a202c;

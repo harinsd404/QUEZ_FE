@@ -16,8 +16,8 @@ export const Container = styled.div`
   top: 0;
   left: 0;
 
-  background-color: white;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-bottom: 1px solid #e2e7f0;
 `;
 export const Logo = styled.img`
   margin-right: auto;

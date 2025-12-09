@@ -1,5 +1,5 @@
 import * as _ from './style';
-import upScore from '@/assets/upScore.svg';
+import upScore from '@/assets/downScore.svg';
 import { Tooltip, Area, AreaChart, ResponsiveContainer } from 'recharts';
 import { useAuth } from '@/hooks/useAuth';
 import { useState } from 'react';
@@ -64,7 +64,11 @@ const ScoreChart = () => {
         {!isAuthenticated && (
           <_.LoginPrompt>
             <_.Message>로그인 후 이용 가능합니다!</_.Message>
-            <Button name="로그인 하러 가기" type="blue" onClick={handleLoginClick} />
+            <Button
+              name="로그인 하러 가기"
+              type="blue"
+              onClick={handleLoginClick}
+            />
           </_.LoginPrompt>
         )}
       </_.Container>

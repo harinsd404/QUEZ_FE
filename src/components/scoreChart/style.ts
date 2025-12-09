@@ -22,6 +22,7 @@ export const Container = styled.div`
   font-weight: 400;
   line-height: 16px;
   text-transform: uppercase;
+  border: 1px solid #e2e7f0;
 `;
 
 export const Content = styled.div<{ isBlurred?: boolean }>`
@@ -31,7 +32,9 @@ export const Content = styled.div<{ isBlurred?: boolean }>`
   align-items: center;
   gap: 20px;
 
-  ${(props) => props.isBlurred && `
+  ${(props) =>
+    props.isBlurred &&
+    `
     filter: blur(4px);
     pointer-events: none;
     user-select: none;
