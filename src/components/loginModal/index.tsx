@@ -29,7 +29,7 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
         <_.Description>
           BSM 계정으로 로그인하여
           <br />
-          퀴즈를 풀어보세요!
+          큐즈를 이용해 보세요!
         </_.Description>
         <_.LoginButton onClick={handleBSMLogin}>
           <_.ButtonText>BSM 로그인</_.ButtonText>

@@ -24,8 +24,8 @@ const Home = () => {
           <QuizBlock
             color="black"
             name="오답노트"
-            body="지금까지 틀렸던 문제를 다시 풀 수 있습니다.
-문제를 푸는 도중 나가더라도 결과는 저장됩니다."
+            body="틀렸던 문제를 다시 풀 수 있습니다.
+중간에 나가더라도 결과는 저장됩니다."
             active={true}
           />
           <QuizBlock
