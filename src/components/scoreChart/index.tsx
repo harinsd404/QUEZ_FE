@@ -2,9 +2,8 @@ import * as _ from './style';
 import upScore from '@/assets/downScore.svg';
 import { Tooltip, Area, AreaChart, ResponsiveContainer } from 'recharts';
 import { useAuth } from '@/hooks/useAuth';
-import { useState } from 'react';
+import { useAlert } from '@/hooks/useAlert';
 import Button from '@/components/button';
-import LoginModal from '@/components/loginModal';
 
 const data = [
   { score: 80 },
@@ -18,14 +17,10 @@ const data = [
 
 const ScoreChart = () => {
   const { isAuthenticated } = useAuth();
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const { showLoginModal } = useAlert();
 
   const handleLoginClick = () => {
-    setIsLoginModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsLoginModalOpen(false);
+    showLoginModal();
   };
 
   return (
@@ -72,7 +67,6 @@ const ScoreChart = () => {
           </_.LoginPrompt>
         )}
       </_.Container>
-      <LoginModal isOpen={isLoginModalOpen} onClose={handleCloseModal} />
     </_.Wrapper>
   );
 };

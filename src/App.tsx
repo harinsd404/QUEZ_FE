@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { AlertProvider } from '@/contexts/AlertContext';
+import Alert from '@/components/Alert';
 import Home from '@/Page/home';
 import Quiz from '@/Page/quiz';
 import Result from './Page/result';
@@ -18,15 +20,18 @@ const queryClient = new QueryClient({
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/quiz/result" element={<Result />} />
-          <Route path="/callback" element={<OAuthCallback />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </BrowserRouter>
+      <AlertProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/quiz/result" element={<Result />} />
+            <Route path="/callback" element={<OAuthCallback />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </BrowserRouter>
+        <Alert />
+      </AlertProvider>
     </QueryClientProvider>
   );
 };

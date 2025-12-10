@@ -1,5 +1,4 @@
 import * as _ from './style';
-import { useNavigate } from 'react-router-dom';
 import Header from '@/components/header';
 import QuizBlock from '@/components/quizBlock';
 import ScoreChart from '@/components/scoreChart';
@@ -7,7 +6,6 @@ import DailyQuiz from '@/components/dailyQuiz';
 import Lanking from '@/components/lanking';
 
 const Home = () => {
-  const navigate = useNavigate();
   return (
     <_.Container>
       <Header />
@@ -19,13 +17,14 @@ const Home = () => {
             body="통합 과학 중 원소에 관한 퀴즈입니다. 
 문제를 많이 맞출 수록 점수가 올라갑니다."
             active={true}
-            onClick={() => navigate('/quiz')}
+            onClick="/quiz"
           />
           <QuizBlock
             color="black"
             name="오답노트"
             body="틀렸던 문제를 다시 풀 수 있습니다.
 중간에 나가더라도 결과는 저장됩니다."
+            onClick="/quiz"
             active={true}
           />
           <QuizBlock

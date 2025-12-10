@@ -2,13 +2,16 @@ import * as _ from './style';
 import Button from '../button';
 import IconBlue from '@/assets/QuizIconBlue.svg';
 import IconBlack from '@/assets/QuizIconBlack.svg';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/hooks/useAuth';
+import { useAlert } from '@/hooks/useAlert';
 
 interface quizBlockInterface {
   color: string;
   name: string;
   body: string;
-  active: Boolean;
-  onClick?: () => void;
+  active: boolean;
+  onClick?: string;
 }
 
 const QuizBlock = ({
@@ -18,6 +21,18 @@ const QuizBlock = ({
   active,
   onClick,
 }: quizBlockInterface) => {
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
+  const { warning } = useAlert();
+
+  const onClickHandle = () => {
+    if (isAuthenticated) {
+      navigate(`/${onClick}`);
+    } else {
+      warning('로그인 후 이용 가능합니다!', '로그인 필요');
+    }
+  };
+
   return (
     <_.Container>
       <_.Content>
@@ -30,7 +45,7 @@ const QuizBlock = ({
       <Button
         name="바로가기"
         type={active ? 'blue' : 'gray'}
-        onClick={onClick}
+        onClick={onClickHandle}
       />
     </_.Container>
   );
